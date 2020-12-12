@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<style>
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+/*DEFAULT SETTINGS DO NOT TOUCH
+    Font Type for Top Menu Bar*/
+    @import url('https://fonts.googleapis.com/css?family=Kanit:700|Roboto:700|Staatliches|Heebo:700|Lato:700');
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+html {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+        height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    }
+body {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+}
+
+.top {
+    height: 10%;
+    width: 100%;
+    background-color: rgb(0, 183, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_left {
+    background-color: white;
+    font-size: 30px;
+    margin-left: 40px;
+    font-family: 'Kanit', 'Roboto', Arial, sans-serif;
+    
+}
+
+.top_right {
+    background-color: brown;
+    padding: 0px;
+    margin-right: 40px;
+    display: flex;
+
+
+}
+
+.top_right button {
+    
+    width: 50px;
+    height: 50px;
+    
+    margin: 0 30px;
+
+    color: white;
+    outline: none;
+    border: none;    
+}
+
+#notif {
+    position: relative;
+}
+
+#notif i{
+    
+    font-size: 45px;
+}
+
+.badge {
+    position: absolute;
+
+    width: 22px;
+    height: 22px;
+    border-radius: 50px; 
+    
+    top: 25px;
+    right: 2px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    background-color: orangered;
+}
+
+.user_cover {
+    width: 45px;
+    height: 45px;
+    background-color: orangered;
+    border-radius: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+/*User button*/
+#user {
+    padding: 0px;
+    margin: 0px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    
+    
+    
+    background-color: white;
+}
+
+.bottom {
+    height: 90%;
+    width: 100%;
+    background-color: rgb(216, 216, 216);
+
+    display: flex;
+}
+
+#bottom_left {
+    width: 360px;
+    height: 100%;
+    text-align: left;
+    font-size: 30px;
+    font-family:  'Heebo', Arial, sans-serif;
+    background-color: yellow;
+    color: white;
+}
+
+
+
+#bottom_left a {
+    display: block;
+    background-color: purple;
+    
+    padding: 15px 0px 15px 25px;
+
+    /*Remove default anchor styling*/
+    text-decoration: none;
+    color: inherit;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    
+}
+
+
+/*Adjust the menu icons to the center and align the words uniformly*/
+#bottom_left a i {
+    margin-right: 20px;
+    text-align: center;
+    width: 35px;
+}
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+#bottom_left a:hover {
+    color:green;
+}
+
+#bottom_left .active  {
+  background-color:rgb(209, 209, 209);
+  color: rgb(0, 183, 255);
+}
+
+
+.bottom_right {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.analysis_cage {
+
+    width: calc(100% - 50px);
+    height: calc(100%  - 50px);
+
+    background-color: red;
+}
+
+.analysis_top {
+
+    width: 100%;
+    height: 17%;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.report_type {
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+.report_type button {
+    outline: 0;
+    border: 0;
+
+    width: 220px;
+    height: 50px;
+
+    margin-left: 30px;
+
+    font-size: 1.5em;
+    word-wrap: break-word;
+    
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.report_search {
+    width: 30%;
+    height: 100%;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 25px;
+
+    background-color: beige;
+}
+
+.report_search input {
+
+    width: 200px;
+    height: 48px;
+    
+    
+
+    background-color: inherit;
+
+    outline: none;
+    border: none;
+    border-bottom: 3px solid blue;
+    
+
+    margin-right: 5px;
+
+    font-size: 1.7vw;
+}
+
+.analysis_bottom {
+    width: 100%;
+    height: 83%;
+
+    background-color: brown; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tabcontent {
+  padding: 0;
+  margin: 0;
+
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: teal;
+}
+
+
+
+/*DO NOT REMOVE*/
+/*Google charts flickering bug solution*/
+svg > g > g:last-child { pointer-events: none }
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+</style>
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+          <button  id="notif"><i class="far fa-bell"></i><div class="badge">5</div></button> 
+          <button id="user"> <div class="user_cover"> <i class="fas fa-user-circle"></i></div></button> 
+            
+        </form>
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left">
+            <a href="#Home" class="btn"><i class="fas fa-home"></i>Home </a>
+            <a href="#" class="btn active"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="#" class="btn"><i class="fas fa-store"></i>Food Vendors </a>
+            <a href="#" class="btn"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="#" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+
+        <div class="bottom_right">
+           <div class="analysis_cage">
+                <div class="analysis_top">
+                    <div class="report_type">
+                        <button class="tablinks" onclick="openCity(event, 'Cafeteria'); drawChart1();" id="defaultOpen">Cafeteria Report</button>
+                        <button class="tablinks" onclick="openCity(event, 'Vendor'); drawChart();" >Vendor Report</button>
+                    </div>
+
+                    <form action="" class="report_search">
+                        <input type="search" placeholder="Search"> <i class="fas fa-search"></i>
+                    </form>
+                </div>
+
+                <div class="analysis_bottom">
+                  
+                  <div id="Cafeteria" class="tabcontent">
+                    <!--   <div id="columnchart_values" style="width: 100%; height: 100%; "></div>   -->
+                    <div id="barchart_material" class="test" style="width: 100%; height: 100%;"></div>
+                  </div>
+                  
+                  <div id="Vendor" class="tabcontent">
+                      <div id="columnchart_values" style="width: 100%; height: 100%; "> rhrhrhrth</div>
+                      
+                  </div>
+                  
+
+                </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script>
+            // Add active class to the current button (highlight it)
+            var header = document.getElementById("bottom_left");
+            var btns = header.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+            });
+            }
+
+
+            //Switch website if it is mobile           
+            if (screen.width <= 699) {
+            document.location = "../join.html";
+            }
+            
+            //Column chart
+            google.charts.load("current", {packages:['corechart']});
+            google.charts.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = google.visualization.arrayToDataTable([
+                    ["Element", "Density", { role: "style" }],
+                    ["Copper", 8.94, "#b87333"],
+                    ["Silver", 10.49, "silver"],
+                    ["Gold", 19.30, "gold"],
+                    ["Platinum", 21.45, "color: #e5e4e2"]
+                    
+                   // ["Diamond", 30.45, "red"]
+                ]);
+
+                var view = new google.visualization.DataView(data);
+                view.setColumns([0, 1,
+                                { calc: "stringify",
+                                    sourceColumn: 1,
+                                    type: "string",
+                                    role: "annotation" },
+                                2]);
+
+                var options = {
+                    title: "Density of Precious Metals, in g/cm^3",
+                    fontSize: 20,
+                    bar: {groupWidth: "95%"},
+                    //legend: { position: "none" },
+                };
+                var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+                chart.draw(view, options);
+            }
+
+            //Stacked bar chart
+            google.charts.load('current', {'packages':['bar']});
+            google.charts.setOnLoadCallback(drawChart1);
+
+            function drawChart1() {
+              var data = google.visualization.arrayToDataTable([
+                ['Year', 'Sales', 'Expenses', 'Profit'],
+                ['2014', 1000, 400, 200],
+                ['2015', 1170, 460, 250],
+                ['2016', 660, 1120, 300],
+                ['2017', 1030, 540, 350]
+              ]);
+
+              var options = {
+                chart: {
+                  title: 'Company Performance',
+                  subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                },
+                bars: 'horizontal' // Required for Material Bar Charts.
+              };
+
+              var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+              chart.draw(data, google.charts.Bar.convertOptions(options));
+            }
+
+
+
+            
+             //Auto resize charts
+             $(window).resize(function(){
+                drawChart();
+                drawChart1();
+                });
+          
+                
+              //Tabs function
+              function openCity(evt, report) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                  tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(report).style.display = "initial";
+                evt.currentTarget.className += " active";
+              }
+
+              // Get the element with id="defaultOpen" and click on it
+              document.getElementById("defaultOpen").click();
+          
+            
+        </script>
+</body>
+</html>

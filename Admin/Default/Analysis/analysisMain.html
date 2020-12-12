@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="../linkFiles/print.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/header.css" type="text/css" />
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/menu.css" type="text/css" />
+<style>
+
+.analysis_top {
+
+    width: 100%;
+    height: 110px;
+    min-height: 110px;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.report_type {
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+.report_type button {
+    outline: 0;
+    border: 0;
+
+    width: 220px;
+    height: 50px;
+
+    margin-left: 30px;
+
+    font-size: 1.5em;
+    word-wrap: break-word;
+    
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.report_search {
+    width: 30%;
+    height: 100%;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 25px;
+
+    background-color: beige;
+}
+
+.report_search input {
+
+    width: 200px;
+    height: 48px;
+    
+    
+
+    background-color: inherit;
+
+    outline: none;
+    border: none;
+    border-bottom: 3px solid blue;
+    
+
+    margin-right: 5px;
+
+    font-size: 1.7vw;
+}
+
+.analysis_bottom {
+    width: 100%;
+    height: 90%;
+    min-height: 90%;
+
+    background-color: brown; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+
+}
+
+.tabcontent {
+  padding: 0;
+  margin: 0;
+
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+  max-height: calc(100% - 50px);
+
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+  
+
+  background-color: teal;
+}
+
+.report_displayType {
+    display: flex;
+    align-items: center;
+    
+    width: 10em;
+    background-color: burlywood;
+}
+
+.report_type_button {
+    width: 50%;
+    
+    padding: 5px 5px;
+
+    text-align: center;
+    font-size: 1.2em;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+/* Report designs */
+.report_cage {
+    width: 100%;
+    height: 90%;
+    
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.report_topbar {
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: chocolate;
+}
+
+.report_top_title {
+    font-size: 1.6em;
+    font-family:  'Heebo', Arial, sans-serif;
+    text-transform: uppercase;
+
+    background-color: blue;
+
+    margin: 0px 25px;
+}
+
+.report_comboBox {
+    outline: none;
+    border: none;
+
+    font-size: 1.6em;
+    font-family:  'Heebo', Arial, sans-serif;
+
+    padding: 0px 15px;
+    border-radius: 50px;
+}
+
+#print_button {
+    outline: none;
+    border: none;
+
+    font-size: 1.6em;
+    font-family:  'Heebo', Arial, sans-serif;
+
+    padding: 0px 15px;
+    border-radius: 50px;
+
+    margin-left: auto;
+    margin-right: 5%;
+}
+
+.report_content_cage {
+    width: 100%;
+    height: 100%;
+
+    background-color: darkslategray;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.report_content_border {
+    border: 1px solid black;
+
+    margin: 20px;
+
+    /* width: 2480px; */
+    width: 95%;
+    height: max-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.report_content_insideCage {
+    width: 90%;
+    height: 95%;
+
+    margin: 20px;
+
+    background-color: orange;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.report_inside_title {
+    width: 100%;
+    height: fit-content;
+    padding: 20px 0px;
+
+    background-color: darkred;
+
+    font-size: 2em;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.report_info_bar {
+    width: 90%;
+    height: fit-content;
+    padding: 25px 0;
+
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+
+    background-color: darkgray;
+
+}
+
+.report_info_detail {
+    background-color: darkviolet;
+
+    min-width: 10em;
+
+}
+
+.report_table {
+    width: 100%;
+}
+
+.report_table tr *{
+    border: 1px solid red;
+
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px 0px;
+
+    width: fit-content;
+}
+
+/* Style the first column */
+.report_table td:nth-child(1) {
+    background-color: yellow;
+}
+
+/* Open Cafeteria page first */
+#Cafeteria {
+    display: flex;
+}
+
+/*DO NOT REMOVE*/
+/*Google charts flickering bug solution*/
+svg > g > g:last-child { pointer-events: none }
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+@media print {
+    body * {
+        visibility: hidden;
+        
+    }
+
+    .report_content_border, .report_content_border * {
+        visibility: visible;
+        z-index: 2;
+        -webkit-print-color-adjust: exact;
+       /* print-color-adjust */
+        color-adjust: exact;
+      
+    }
+
+    .report_content_border {
+        position: fixed;
+        height: 98%;
+        width: 97%;
+        overflow: hidden;
+
+        
+
+        /* left: -28%;
+        top: -10%; */
+
+        left: 0;
+        top: 0;
+        
+        /* display: flex;
+        justify-content: center;
+        align-self: center; */
+    }
+
+
+}
+</style>
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+          <button type="button" id="notif"><i class="far fa-bell"></i><div class="badge">5</div></button> 
+          <button type="button" id="user"> <div class="user_cover"> <i class="fas fa-user-circle"></i></div></button> 
+            
+        </form>
+
+        <div class="notif_cage">
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+        </div>
+
+        <div class="notif_setting_cage">
+            <a href="../userSettings/userSettings.html" class="notif_setting_stack">
+                <h2> View Profile</h2>
+            </a>
+
+            <div class="notif_setting_stack">
+                <h2>Log Out</h2>
+            </div>
+        </div>
+
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left">
+            <a href="../homeAdmin.html" class="btn"><i class="fas fa-home"></i>Home </a>
+            <a href="../Analysis/analysisMain.html" class="btn activeTab"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="../foodVendor/foodVendorMain.html" class="btn "><i class="fas fa-store"></i>Food Vendors </a>
+            <a href="../accessCard/accessCardMain.html" class="btn"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="../systemUsers/systemUsers.html" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+
+        <div class="bottom_right">
+           <div class="analysis_cage">
+                <div class="analysis_top">
+                    <div class="report_type">
+                        <button class="tablinks tab_defaultColour tab_colour " onclick="openCity(event, 'Cafeteria'); analysisCafeteria();">Cafeteria Report</button>
+                        <button class="tablinks tab_defaultColour" onclick="openCity(event, 'Vendor'); analysisVendor();" >Vendor Report</button>
+                    </div>
+
+                    <form action="" class="report_search">
+                        <input type="search" placeholder="Search"> <i class="fas fa-search"></i>
+                    </form>
+                </div>
+
+                <div class="analysis_bottom">
+                  
+                    <div id="Cafeteria" class="tabcontent">
+                        <div id="barchart_material" class="test" style="width: 100%; height: 90%;"></div>
+                        <div class="report_displayType">
+                            <div class="report_type_button tab_colour">
+                                Chart View 
+                            </div>
+
+                            <div class="report_type_button tablinks" onclick="openCity(event, 'cafe_report');">
+                                Report View
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="cafe_report" class="tabcontent">
+                        <div class="report_cage">
+                            <div class="report_topbar">
+                               <div class="report_top_title">
+                                    Please Select The Month :
+                                </div>
+
+                                <form action="">
+                                    <select name="hey" class="report_comboBox">
+                                        <option value="january">January</option>
+                                        <option value="february">February</option>
+                                        <option value="march">March</option>
+                                        <option value="april">April</option>
+                                        <option value="june">June</option>
+                                        <option value="july">July</option>
+                                        <option value="august">August</option>
+                                        <option value="september">September</option>
+                                        <option value="octorber">Octorber</option>
+                                        <option value="november">November</option>
+                                        <option value="decemeber">Decemeber</option>                                        
+                                    </select>
+                                </form>
+
+                                <button id="print_button" onclick="window.print();">Print</button>
+                            </div>
+
+                            <div class="report_content_cage">
+                                <div class="report_content_border">
+                                    <div class="report_content_insideCage">
+                                        <div class="report_inside_title">
+                                            APU Cafeteria Management System Monthly Sales Report
+                                        </div>
+
+                                        <div class="report_info_bar">
+                                            <div class="report_info_detail">
+                                                User: Adrean Lim 
+                                            </div>
+
+                                            <div class="report_info_detail">
+                                                Current Date: 27/4/2019
+                                            </div>
+                                        </div>
+
+                                        <div class="report_info_bar">
+                                            <div class="report_info_detail">
+                                                Role: Admin Manager
+                                            </div>
+
+                                            <div class="report_info_detail">
+                                                Page: 1 out of 1
+                                            </div>
+                                        </div>
+
+                                        <table class="report_table">
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Month</th>
+                                                <th>Food Vendor</th>
+                                                <th>Total Sales</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="font-weight: bold;">2019</td>
+                                                <td>January</td>
+                                                <td>Food Vendor A</td>
+                                                <td>RM 6,400.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor B</td>
+                                                <td>RM 5,000.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor C</td>
+                                                <td>RM 8,200.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor D</td>
+                                                <td>RM 6,300.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Grand Total</th>
+                                                <td></td>
+                                                <td></td>
+                                                <th>RM 25,900.00</th>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="report_displayType">
+                            <div class="report_type_button tablinks" onclick="openCity(event, 'Cafeteria'); analysisCafeteria();">
+                                Chart
+                            </div>
+
+                            <div class="report_type_button tab_colour">
+                                Report
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    
+                    <div id="Vendor" class="tabcontent">
+                        <div id="columnchart_values" style="width: 100%; height: 90%; "> rhrhrhrth</div>
+                        <div class="report_displayType">
+                            <div class="report_type_button tab_colour">
+                                Chart
+                            </div>
+
+                            <div class="report_type_button tablinks" onclick="openCity(event, 'vendor_report');">
+                                Report
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="vendor_report" class="tabcontent">
+                        <div class="report_cage">
+                            <div class="report_topbar">
+                               <div class="report_top_title">
+                                    Please Select The Month :
+                                </div>
+
+                                <form action="">
+                                    <select name="hey" class="report_comboBox">
+                                        <option value="january">January</option>
+                                        <option value="february">February</option>
+                                        <option value="march">March</option>
+                                        <option value="april">April</option>
+                                        <option value="june">June</option>
+                                        <option value="july">July</option>
+                                        <option value="august">August</option>
+                                        <option value="september">September</option>
+                                        <option value="octorber">Octorber</option>
+                                        <option value="november">November</option>
+                                        <option value="decemeber">Decemeber</option>                                        
+                                    </select>
+                                </form>
+
+                                <button id="print_button" onclick="window.print();">Print</button>
+                            </div>
+
+                            <div class="report_content_cage">
+                                <div class="report_content_border">
+                                    <div class="report_content_insideCage">
+                                        <div class="report_inside_title">
+                                            APU VENDOR PUNYA Sales Report
+                                        </div>
+
+                                        <div class="report_info_bar">
+                                            <div class="report_info_detail">
+                                                User: Adrean Lim 
+                                            </div>
+
+                                            <div class="report_info_detail">
+                                                Current Date: 27/4/2019
+                                            </div>
+                                        </div>
+
+                                        <div class="report_info_bar">
+                                            <div class="report_info_detail">
+                                                Role: Admin Manager
+                                            </div>
+
+                                            <div class="report_info_detail">
+                                                Page: 1 out of 1
+                                            </div>
+                                        </div>
+
+                                        <table class="report_table">
+                                            <tr>
+                                                <th>Year</th>
+                                                <th>Month</th>
+                                                <th>Food Vendor</th>
+                                                <th>Total Sales</th>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="font-weight: bold;">2019</td>
+                                                <td>January</td>
+                                                <td>Food Vendor A</td>
+                                                <td>RM 6,400.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor B</td>
+                                                <td>RM 5,000.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor C</td>
+                                                <td>RM 8,200.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Food Vendor D</td>
+                                                <td>RM 6,300.00</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th>Grand Total</th>
+                                                <td></td>
+                                                <td></td>
+                                                <th>RM 25,900.00</th>
+                                            </tr>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="report_displayType">
+                            <div class="report_type_button tablinks" onclick="openCity(event, 'Vendor'); analysisCafeteria();">
+                                Chart View 
+                            </div>
+
+                            <div class="report_type_button tab_colour">
+                                Report View
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../linkFiles/mainJS.js"></script>
+    <script type="text/javascript" src="../linkFiles/tabColour.js"></script>
+    <script type="text/javascript" src="../linkFiles/charts.js"></script>
+    <script type="text/javascript" src="../linkFiles/headerModal.js"></script>
+    <script type="text/javascript" src="../linkFiles/headerModal.js"></script>
+    <script type="text/javascript" src="../linkFiles/print.js"></script>
+    
+
+   
+</body>
+</html>
