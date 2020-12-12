@@ -1,0 +1,132 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+/*DEFAULT SETTINGS DO NOT TOUCH
+    Font Type for Top Menu Bar*/
+    @import url('https://fonts.googleapis.com/css?family=Kanit:700|Roboto:700|Staatliches|Heebo:700|Lato:700');
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+html {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+        height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    }
+body {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+}
+
+.top {
+    height: 10%;
+    width: 100%;
+    background-color: #52CCF8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top_left {
+    color: white;
+    font-size: 30px;
+    margin-left: 40px;
+    font-family: 'Kanit', 'Roboto', Arial, sans-serif;
+    
+}
+
+.top_right {
+    padding: 0px;
+    margin-right: 40px;
+    display: flex;
+
+
+}
+
+.top_right button {
+    
+    width: 50px;
+    height: 50px;
+    
+    margin: 0 30px;
+
+    color: white;
+    outline: none;
+    border: none;    
+}
+
+.top_right button * {
+    pointer-events: none;
+}
+
+.user_cover {
+    width: 45px;
+    height: 45px;
+    background-color: orangered;
+    border-radius: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*User button*/
+#user {
+    padding: 0px;
+    margin: 0px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    
+    
+    
+    background-color: white;
+}
+
+
+.notif_setting_cage {
+    background-color: orangered;
+
+    position: fixed;
+
+    display: none;
+    flex-direction: column;
+
+    z-index: 2;
+
+    top: 10%;
+    right: 40px;
+
+    width: 260px;
+}
+
+.notif_setting_stack {
+    width: 100%;
+    height: 20px;
+
+    padding: 10px 0px;
+
+    text-indent: 15px;
+    /*font-size: 1.5vh;*/
+    font-size: 14px;
+    font-family:  'Heebo', Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-decoration: none;
+}
+
+.notif_border {
+    border-top: 1px solid white;
+}
+
+
+.notif_setting_stack:hover {
+    background-color: burlywood;
+}
