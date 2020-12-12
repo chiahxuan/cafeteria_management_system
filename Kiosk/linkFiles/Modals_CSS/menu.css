@@ -1,0 +1,104 @@
+.bottom {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(216, 216, 216);
+
+    display: flex;
+}
+
+#bottom_left {
+    width: 360px;
+    min-width: 280px;
+    height: 100%;
+    text-align: left;
+    font-size: 30px;
+    font-family:  'Heebo', Arial, sans-serif;
+    background-color: yellow;
+    color: white;
+}
+
+
+
+#bottom_left a {
+    display: block;
+    background-color: purple;
+    
+    padding: 15px 0px 15px 25px;
+
+    /*Remove default anchor styling*/
+    text-decoration: none;
+    color: inherit;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    
+}
+
+
+/*Adjust the menu icons to the center and align the words uniformly*/
+#bottom_left a i {
+    margin-right: 20px;
+    text-align: center;
+    width: 35px;
+}
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+#bottom_left a:hover {
+    color:green;
+}
+
+#bottom_left .activeTab  {
+  background-color:rgb(209, 209, 209);
+  color: rgb(0, 183, 255);
+}
+
+
+.bottom_right {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.analysis_cage {
+
+    width: calc(100% - 50px);
+    height: calc(100%  - 50px);
+
+    background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    
+}
+
+.topUpKiosk_cage {
+
+    width: 100%;
+    height: 100%; 
+    background-color: red;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    
+}
+
+
+/* Change tablinks colour */
+.tab_colour {
+    background-color: #083f66;
+}
+
+.tab_colour2 {
+    background-color: #083f66;
+}

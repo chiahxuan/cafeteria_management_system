@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/header.css" type="text/css" />
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/menu.css" type="text/css" />
+<style>
+
+.analysis_top {
+
+    width: 100%;
+    height: 110px;
+    min-height: 110px;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.report_type {
+
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: aqua;
+}
+
+.report_type button {
+    outline: 0;
+    border: 0;
+
+    width: 220px;
+    height: 50px;
+
+    margin-left: 30px;
+
+    font-size: 1.5em;
+    word-wrap: break-word;
+    
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.report_search {
+    width: 30%;
+    height: 100%;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 25px;
+
+    background-color: beige;
+}
+
+.report_search input {
+
+    width: 200px;
+    height: 48px;
+    
+    
+
+    background-color: inherit;
+
+    outline: none;
+    border: none;
+    border-bottom: 3px solid blue;
+    
+
+    margin-right: 5px;
+
+    font-size: 1.7vw;
+}
+
+.analysis_bottom {
+    width: 100%;
+    height: 90%;
+
+    background-color: brown; 
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+
+}
+
+.tabcontent {
+  padding: 0;
+  margin: 0;
+
+  width: calc(100% - 50px);
+  height: calc(100% - 50px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: teal;
+}
+
+
+
+/*DO NOT REMOVE*/
+/*Google charts flickering bug solution*/
+svg > g > g:last-child { pointer-events: none }
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+</style>
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+          <button type="button" id="notif"><i class="far fa-bell"></i><div class="badge">5</div></button> 
+          <button type="button" id="user"> <div class="user_cover"> <i class="fas fa-user-circle"></i></div></button> 
+            
+        </form>
+
+        <div class="notif_cage">
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+        </div>
+
+        <div class="notif_setting_cage">
+            <a href="../userSettings/userSettings.html" class="notif_setting_stack">
+                <h2> View Profile</h2>
+            </a>
+
+            <div class="notif_setting_stack">
+                <h2>Log Out</h2>
+            </div>
+        </div>
+
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left">
+            <a href="../homeAdmin.html" class="btn"><i class="fas fa-home"></i>Home </a>
+            <a href="../Analysis/analysisMain.html" class="btn activeTab"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="../foodVendor/foodVendorMain.html" class="btn"><i class="fas fa-store"></i>Food Vendors </a>
+            <a href="../accessCard/accessCardMain.html" class="btn"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="../systemUsers/systemUsers.html" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+
+        <div class="bottom_right">
+           <div class="analysis_cage">
+                <div class="analysis_top">
+                    <div class="report_type">
+                        <button class="tablinks" onclick="openCity(event, 'Cafeteria'); analysisCafeteria();" id="defaultOpen">Cafeteria Report</button>
+                        <button class="tablinks" onclick="openCity(event, 'Vendor'); analysisVendor();" >Vendor Report</button>
+                    </div>
+
+                    <form action="" class="report_search">
+                        <input type="search" placeholder="Search"> <i class="fas fa-search"></i>
+                    </form>
+                </div>
+
+                <div class="analysis_bottom">
+                  
+                    <div id="Cafeteria" class="tabcontent">
+                        <!--   <div id="columnchart_values" style="width: 100%; height: 100%; "></div>   -->
+                        <div id="barchart_material" class="test" style="width: 100%; height: 100%;"></div>
+                    </div>
+                    
+                    <div id="Vendor" class="tabcontent">
+                        <div id="columnchart_values" style="width: 100%; height: 100%; "> rhrhrhrth</div>
+                    </div>
+                  
+
+                </div>
+           </div>
+           
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../linkFiles/mainJS.js"></script>
+    <script type="text/javascript" src="../linkFiles/charts.js"></script>
+    <script type="text/javascript" src="../linkFiles/headerModal.js"></script>
+
+
+   
+</body>
+</html>
