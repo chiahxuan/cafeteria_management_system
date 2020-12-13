@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+        
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/header.css" type="text/css" />
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/menu.css" type="text/css" />
+<script src="https://www.google.com/jsapi"></script>
+<style>
+
+
+.tabcontent {
+    padding: 0;
+    margin: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    flex-direction: column;
+    
+    align-items: center;
+
+    background-color: blue;
+    
+}
+
+.analysis_top {
+
+    width: 100%;
+    height: 110px;
+    min-height: 110px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: gray;
+}
+
+.step_design {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    font-size: 1.5em;
+    word-wrap: break-word;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.angle {
+    max-width: 0px;
+    max-height: 0px;
+    
+
+    border-top: 55px solid #427AA1;
+    border-left: 55px solid #427AA1;
+    border-right: 30px solid #427AA1;
+    border-bottom: 55px solid #427AA1;
+    
+}
+
+.step_length{
+    padding: 0 30px 0 30px;
+}
+
+.step_darkColour {
+    background-color: #083f66;
+    color: #d8d8d8;
+}
+
+.tri_dark_medium {
+    border-top-color:  #9dc4df;
+    border-left-color:  #083f66;
+    border-right-color: #9dc4df;
+    border-bottom-color: #9dc4df;
+}
+
+.step_mediumColour {
+    background-color: #9dc4df;
+    color: #083f66;
+}
+
+.tri_medium_light {
+    border-top-color:  #EBF2FA;
+    border-left-color:  #9dc4df;
+    border-right-color: #EBF2FA;
+    border-bottom-color: #EBF2FA;
+}
+
+.step_lightColour {
+    background-color: #EBF2FA;
+    color: #083f66;
+}
+
+.tri_light {
+    border-top-color:  #EBF2FA;
+    border-left-color:  #EBF2FA;
+    border-right-color: #EBF2FA;
+    border-bottom-color: #EBF2FA;
+}
+
+.tri_medium_dark {
+    border-top-color:  #083f66;
+    border-left-color:  #9dc4df;
+    border-right-color: #083f66;
+    border-bottom-color: #083f66;
+}
+
+.tri_dark_light {
+    border-top-color:  #EBF2FA;
+    border-left-color:  #083f66;
+    border-right-color: #EBF2FA;
+    border-bottom-color: #EBF2FA;
+}
+
+.tri_light_dark {
+    border-top-color:  #083f66;
+    border-left-color:  #EBF2FA;
+    border-right-color: #083f66;
+    border-bottom-color: #083f66;
+}
+
+
+#back_button {
+    outline: none;
+    border: none;
+
+    width: 50px;
+    height: 50px;
+
+    margin-left: auto;
+    margin-right: 80px;
+
+    font-size: 2vw;
+
+    border-radius: 100%;
+}
+
+/*DEFAULT SETTING DO NOT TOUCH*/
+/*Revert triangle padding to 0px to ensure the sized is fixed across all triangles*/
+.angle {
+    padding: 0px;
+}
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+.analysis_bottom {
+    width: 100%;
+    height: 100%;
+
+    margin-top: 25px;
+
+    background-color: violet;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Step1 CSS*/
+.reload_pic, .activity_option_icon {
+    width: 250px;
+    height: 250px;
+
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 8em;
+
+    background-color: lightblue;
+}
+
+.reload_title {
+    background-color: orange;
+
+    margin: 20px 0px;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    word-wrap: break-word;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.reload_input {
+    width: 500px;
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: lightcoral;
+
+    
+}
+
+.reload_input * {
+    outline: none;
+    border: none;
+    
+}
+
+.reload_input input {
+    width: 100%;
+    height: calc(80px - 2px);
+    
+    font-size:  2.2em;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.reload_input button {
+    min-width: 80px;
+    width: 80px;
+    height: inherit;
+
+    font-size:  2.6em;
+}
+/*^^^^^^^^^*/
+
+/*Step2 CSS*/
+.activity_cage {
+    width: 100%;
+    height: 100%;
+
+    background-color: aqua;
+    display: flex;
+}
+
+.activity_stack {
+    width: 35%;
+    height: 100%;
+
+    background-color: orangered;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card_status {
+    width: 100%;
+    height: 90px;
+    min-height: 90px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: antiquewhite;
+
+    text-transform: uppercase;
+    font-size:  2.2em;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.card_status span {
+    color: lightgreen;
+    margin-left: 10px;
+}
+
+.activity_option {
+    width: calc(100% - 50px);
+    height: calc(100% - 140px);
+
+    margin: auto;
+
+    border-radius: 50px;
+
+    background-color: crimson;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.activity_option_button {
+    width: 100%;
+
+    background-color: blue;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 15px 0px;
+}
+
+.activity_option_button button {
+    outline: none;
+    border: none;
+
+    width: 90%;
+    
+    min-height: 60px;
+
+    border-radius: 20px;
+
+    
+
+    text-transform: uppercase;
+    /*font-size:  2.2em;*/
+    font-size: 1.8vw;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+/*Step3: Reload amount section*/
+.reload {
+    width: 200px;
+    height: 200px;
+}
+
+.reload_cage {
+    width: 50%;
+    
+    margin-top: 20px;
+
+    display: flex;
+    
+    flex-direction: column;
+    background-color: deeppink;
+    
+}
+
+.reload_cage button {
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    
+    padding: 15px 20px;
+    margin-right: 20px;
+    
+    
+    
+    align-self: flex-end;
+
+    font-size: 1.6vw;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+
+}
+
+.reload_stack {
+    width: 100%;
+    height: 20%;
+
+    background-color: darkviolet;
+
+    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reload_stack_title {
+    width: 40%;
+    height: 100%;
+
+    background-color: darkslategray;
+
+    font-size: 1.8vw;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+
+    display: flex;
+    align-items: center;
+}
+
+.reload_stack_title span {
+    margin-left: auto;
+}
+
+.reload_stack input {
+    outline: none;
+    border: none;
+
+    height: 100%;
+    width: 50%;
+
+    font-size: 1.8vw;
+    text-transform: uppercase;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+/*Ste3A: Refund transaction*/
+.trans_title_cage {
+    width: 60%;
+    height: 115px;
+
+    background-color: darkgreen;
+
+    margin-bottom: auto;
+    margin-top: 25px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+
+    font-family: 'Heebo', Arial, sans-serif;
+}
+
+.trans_title_cage div h2 {
+    padding: 0px;
+    margin: 0px;
+    line-height: 90%;
+}
+
+.trans_title_cage div span {
+    font-size: 0.9vw;
+}
+
+.trans_title_time, .trans_title_profit {
+    
+    height: 100%;
+
+    margin: 0px 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 1.5vw;
+
+    background-color: blueviolet;
+}
+
+.trans_detail_cage {
+    width: 100%;
+    height: 80%;
+
+    background-color: darkgoldenrod;
+    display: flex; 
+    flex-direction: column;
+
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+
+.trans_detail {
+    width: 100%;
+    height: 70px;
+    min-height: 70px;
+
+    padding: 10px 0px;
+
+    background-color: indigo;
+    display: flex;
+    justify-content: space-between;
+}
+
+.trans_detail_food, .trans_detail_price, .trans_detailTitle {
+    width: 35%;
+    height: 100%;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 1.6vw;
+    font-family: 'Heebo', Arial, sans-serif;
+
+    background-color: darkorange;
+}
+
+.trans_detail_food, .trans_detailTitle {
+    padding-left: 30px;
+}
+
+.trans_detailTitle {
+    font-size: 1.8vw;
+    text-transform: uppercase;
+}
+
+.trans_detail_food span {
+    font-size: 1.2vw;
+}
+
+.trans_detail_price {
+    font-size: 2vw;
+
+    align-items: flex-end;
+    padding-right: 30px;
+
+    width: 20%;
+}
+
+/*Search div for step3A Refund*/
+.report_search {
+    width: 30%;
+    height: 100%;
+
+    font-size: 30px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 30px;
+
+    background-color: beige;
+}
+
+.report_search * {
+    outline: none;
+    border: none;
+}
+
+.report_search input {
+
+    width: 200px;
+    height: 48px;
+    
+    background-color: inherit;
+    border-bottom: 3px solid blue;
+    
+
+    margin-right: 5px;
+
+    font-size: 1.7vw;
+}
+
+.report_search button {
+    font-size: 30px;
+}
+
+.lmao
+
+/*DO NOT REMOVE*/
+/*Google charts flickering bug solution*/
+svg > g > g:last-child { pointer-events: none }
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+</style>
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/popUpModals.css" type="text/css" />
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left LOL">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+          <button type="button" id="notif"><i class="far fa-bell"></i><span class="badge">5</span></button> 
+          <button type="button" id="user"> <span class="user_cover"> <i class="fas fa-user-circle"></i></span></button> 
+            
+        </form>
+
+        <div class="notif_cage">
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+        </div>
+
+        <div class="notif_setting_cage">
+            <a href="../userSettings/userSettings.html" class="notif_setting_stack">
+                <h2> View Profile</h2>
+            </a>
+
+            <div class="notif_setting_stack">
+                <h2>Log Out</h2>
+            </div>
+        </div>
+
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left" class="">
+            <a href="../homeAdmin.html" class="btn"><i class="fas fa-home"></i>Home </a>
+            <a href="../Analysis/analysisMain.html" class="btn"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="../foodVendor/foodVendorMain.html" class="btn"><i class="fas fa-store"></i>Food Vendors </a>
+            <a class="btn activeTab tablinks" onclick="openCity(event, 'Card');" id="defaultOpen"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="../systemUsers/systemUsers.html" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+
+        <div class="bottom_right">
+           <div class="analysis_cage">
+                    
+                    <!-- Step1: Enter User ID -->
+                    <div id="Card" class="tabcontent">
+                        <div class="analysis_top">
+                           <div class="step_design step_length step_darkColour" style="padding: 0px 30px 0px 80px;">
+                            Step 1: Enter ID
+                           </div>
+
+                           <div class="angle tri_dark_medium"></div>
+
+                           <div class="step_design step_length step_mediumColour">
+                            Step 2
+                           </div>
+
+                           <div class="angle tri_medium_light"></div>
+
+                           <div class="step_design step_length step_lightColour">
+                            Step 3
+                           </div>
+
+                           <div class="angle  tri_light"></div>
+                        </div>
+
+                        <div class="analysis_bottom">
+                            <div class="reload_pic">
+                                    <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="reload_title">
+                                Please Enter The Card ID:
+                            </div>
+                            <form class="reload_input" action="">
+                                <input type="text"> 
+                                <button type="button" class="tablinks" onclick="openCity(event, 'Activity');"><i class="fas fa-arrow-right"></i></button>
+                            </form>
+                        </div>
+                     </div>
+
+                     <!-- Step2: Select your activity section -->
+                    <div id="Activity" class="tabcontent">
+                        <div class="analysis_top">
+                            <div class="step_design step_length step_mediumColour" style="padding: 0px 30px 0px 80px;">
+                                Step 1
+                            </div>
+    
+                            <div class="angle tri_medium_dark "></div>
+    
+                            <div class="step_design step_length step_darkColour ">
+                                Step 2: Select Your Activity
+                            </div>
+    
+                            <div class="angle tri_dark_light"   ></div>
+    
+                            <div class="step_design step_length step_lightColour">                             
+                                Step 3
+                            </div>
+    
+                            <div class="angle  tri_light"></div>
+
+                            <button id="back_button" class="tablinks" onclick="openCity(event, 'Card');"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+
+                        <div class="analysis_bottom">
+                            <div class="activity_cage">
+                                <div class="activity_stack">
+                                    <div class="card_status">
+                                        CARD ID: TP048940
+                                    </div>
+
+                                    <div class="activity_option">
+                                        <div class="activity_option_icon">
+                                            <i class="far fa-money-bill-alt"></i>
+                                        </div>
+
+                                        <form class="activity_option_button">
+                                            <button type="button" class="tablinks" onclick="openCity(event, 'topUp');">Top Up</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="activity_stack" style="background-color:darkcyan;">
+                                    <div class="card_status">
+                                        BALANCE: RM 7.50
+                                    </div>
+
+                                    <div class="activity_option" style="background-color: cornflowerblue;">
+                                        <div class="activity_option_icon">
+                                            <i class="fas fa-redo-alt"></i>
+                                        </div>
+
+                                        <form class="activity_option_button">
+                                            <button type="button" class="tablinks" onclick="openCity(event, 'Refund');">Refund</button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <div class="activity_stack" style="background-color:darkkhaki;">
+                                    <div class="card_status">
+                                        STATUS : <span> ACTIVATED</span> 
+                                    </div>
+
+                                    <div class="activity_option" style="background-color: deepskyblue;">
+                                        <div class="activity_option_icon">
+                                            <i class="far fa-money-bill-alt"></i>
+                                        </div>
+
+                                        <form class="activity_option_button">
+                                            <button>Change card status</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step3: Top Up section-->
+                    <div id="topUp" class="tabcontent">
+                        <div class="analysis_top">
+                            <div class="step_design step_length step_mediumColour" style="padding: 0px 30px 0px 80px;">
+                                Step 1
+                            </div>
+
+                            <div class="angle tri_medium_light"></div>
+
+                            <div class="step_design step_length step_lightColour">
+                                Step 2
+                            </div>
+
+                            <div class="angle tri_light_dark"></div>
+
+                            <div class="step_design step_length step_darkColour">
+                                Step 3: Enter Top Up Amount
+                            </div>
+
+                            <div class="angle  tri_dark_light"></div>
+
+                            <button id="back_button" class="tablinks" onclick="openCity(event, 'Activity');"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+ 
+                        <div class="analysis_bottom">
+                            <div class="reload_pic reload">
+                                    <i class="far fa-money-bill-alt"></i>
+                            </div>
+                           
+                            <form class="reload_cage" action="">
+                                <div class="reload_stack"> 
+                                    <div class="reload_stack_title">
+                                        Card ID 
+                                        <span>:</span>
+                                    </div>
+
+                                    <input type="text">
+                                </div>
+
+                                <div class="reload_stack"> 
+                                    <div class="reload_stack_title">
+                                        Balance 
+                                        <span>:</span>
+                                    </div>
+
+                                    <input class="reload_input_number" type="number">
+                                </div>
+
+                                <div class="reload_stack"> 
+                                    <div class="reload_stack_title">
+                                        Amount
+                                        <span>:</span>
+                                    </div>
+
+                                    <input class="reload_input_number" type="text">
+                                </div>
+
+                                <button type="button" id="popUp1">Confirm</button>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Step3A: Refund transaction -->
+                    <div id="Refund" class="tabcontent">
+                        <div class="analysis_top">
+                            <div class="step_design step_length step_mediumColour" style="padding: 0px 30px 0px 80px;">
+                                Step 1
+                            </div>
+
+                            <div class="angle tri_medium_light"></div>
+
+                            <div class="step_design step_length step_lightColour">
+                                Step 2
+                            </div>
+
+                            <div class="angle tri_light_dark"></div>
+
+                            <div class="step_design step_length step_darkColour">
+                                Step 3: Refund transaction
+                            </div>
+
+                            <div class="angle  tri_dark_light"></div>
+
+                            <button id="back_button" class="tablinks" onclick="openCity(event, 'Activity');"><i class="fas fa-arrow-left"></i></button>
+                        </div>
+
+                        <div class="analysis_bottom">
+                            <div class="trans_title_cage">
+                                <div class="trans_title_time">
+                                    <h2>V010001</h2>
+                                    <span>Last Updated</span>
+                                    <span style="font-size: 22px;">Nov 26 2018 at 05:36 PM</span>
+                                </div>
+
+                                <div class="trans_title_profit">
+                                    <span>Profit</span>
+                                    <h2>RM 12000.80</h2>
+                                </div>
+                            </div>
+
+                            <div class="trans_detail">
+                                <div class="trans_detailTitle">
+                                    Select The Transaction : 
+                                </div>
+
+                                <form action="" class="report_search">
+                                    <input type="search" placeholder="Search">
+                                    <button><i class="fas fa-search"></i></button> 
+                                </form>
+
+                            </div>
+
+                            <div class="trans_detail_cage">
+
+                                <div class="trans_detail">
+                                    <div class="trans_detail_food">
+                                        NASI LEMAK
+                                        <span>Nov 26 2018 at 05:36 PM</span>
+                                    </div>
+
+                                    <div class="trans_detail_price">
+                                        RM 10.00
+                                    </div>
+                                </div>
+
+                                <div class="trans_detail">
+                                    <div class="trans_detail_food">
+                                        NASI LEMAK
+                                        <span>Nov 26 2018 at 05:36 PM</span>
+                                    </div>
+
+                                    <div class="trans_detail_price">
+                                        RM 10.00
+                                    </div>
+                                </div>
+
+                                <div class="trans_detail">
+                                    <div class="trans_detail_food">
+                                        NASI LEMAK
+                                        <span>Nov 26 2018 at 05:36 PM</span>
+                                    </div>
+
+                                    <div class="trans_detail_price">
+                                        RM 10.00
+                                    </div>
+                                </div> 
+                                
+                                <div class="trans_detail">
+                                    <div class="trans_detail_food">
+                                        NASI LEMAK
+                                        <span>Nov 26 2018 at 05:36 PM</span>
+                                    </div>
+
+                                    <div class="trans_detail_price">
+                                        RM 10.00
+                                    </div>
+                                </div>
+
+                                <div class="trans_detail">
+                                    <div class="trans_detail_food">
+                                        NASI LEMAK
+                                        <span>Nov 26 2018 at 05:36 PM</span>
+                                    </div>
+
+                                    <div class="trans_detail_price">
+                                        RM 10.00
+                                    </div>
+                                </div> 
+                            </div>
+
+                        </div>
+                    </div>
+                  
+           </div>
+           
+            <!-- The Modal 1-->
+            <div id="Modal1" class="modal">
+                <!-- Modal content -->
+                <div class="content_cage">
+                    <div class="content_outerCage">
+                        <div class="content_innerCage">
+                            <div class="content_icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            Successfully Added!
+                        </div>
+
+                        <span class="close">Dismiss</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../linkFiles/mainJS.js"></script>
+    <script type="text/javascript" src="../linkFiles/popUpModal.js"></script>
+  
+
+
+</body>
+</html>

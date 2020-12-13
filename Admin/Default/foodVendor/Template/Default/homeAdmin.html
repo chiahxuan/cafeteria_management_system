@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<link rel="stylesheet" href="../Default/linkFiles/Modals_CSS/header.css" type="text/css" />
+<link rel="stylesheet" href="../Default/linkFiles/Modals_CSS/menu.css" type="text/css" />
+<style>
+
+
+.stats_group {
+    width: 50%;
+    height: 100%;
+    background-color: purple;
+}
+
+.stats {
+    width: 100%;
+    height: 25%;
+    background-color: darkolivegreen;
+    text-align: center;
+    display: flex;
+}
+
+.stat {
+    width:50%;
+
+    border: 1px black solid;
+    background-color: aqua;
+    
+    font-size: 20px;
+    font-family:  'Lato', Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat span {
+    background-color: coral;
+    height:40px;
+    margin-bottom: 20px;
+}
+
+.stat_circle {
+    padding: 0px;
+    margin: 0px auto;
+
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+
+    background-color: Lightgrey;
+
+    font-size: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.complain {
+    width: 100%;
+    height: 75%;
+
+    color: rgb(14, 14, 14);
+    background-color: lawngreen;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.complain_cage {
+    width: 80%; 
+    height: 95%;
+    
+    background-color: lightsalmon;
+}
+
+.complain_title {
+    width: 100%;
+    height: 20%;
+
+    color: rgb(250, 99, 4);
+    background-color: darkolivegreen;
+
+    font-size: 32px;
+    font-family:  'Heebo', Arial, sans-serif;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.complain_content {
+    width: 100%;
+    height: 80%;
+
+    background-color: white;
+    
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.complain_card {
+    width: 90%;
+    height: 25%;
+
+    margin: 0 auto;
+    
+    margin-bottom: 15px; 
+
+    color: rgb(102, 102, 102);
+    background-color: rgb(209, 209, 209);
+
+    border-radius: 25px;
+
+    font-size: 20px;
+    font-weight: bold;
+    font-family:  'Lato', Arial, sans-serif;
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+   text-align: center;
+}
+
+.complain_id {
+    
+    align-self: flex-end;
+    margin-right: 50px; 
+    text-align: right;
+    color: red;
+    background-color: yellow;
+    
+   
+    
+
+    
+    
+}
+
+.graph_group {
+    width: 50%;
+    height: 100%;
+    background-color: violet;
+}
+
+.graph {
+    
+    height: 50%;
+
+    background-color: crimson;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.red {
+    background-color: purple;
+    
+}
+
+/*DO NOT REMOVE*/
+/*Google charts flickering bug solution*/
+svg > g > g:last-child { pointer-events: none }
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+
+
+</style>
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+            <button type="button" id="notif"><i class="far fa-bell"></i><div class="badge">5</div></button>
+           
+            <button type="button" id="user"> <div class="user_cover"><i class="fas fa-user-circle"></i></div></button>
+            
+        </form>
+
+        <div class="notif_cage">
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+        </div>
+
+        <div class="notif_setting_cage">
+            <a href="./userSettings/userSettings.html" class="notif_setting_stack">
+                <h2> View Profile</h2>
+            </a>
+
+            <div class="notif_setting_stack">
+                <h2>Log Out</h2>
+            </div>
+        </div>
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left">
+            <a href="homeAdmin.html" class="btn activeTab"><i class="fas fa-home"></i>Home </a>
+            <a href="./Analysis/analysisMain.html" class="btn"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="./foodVendor/foodVendorMain.html" class="btn"><i class="fas fa-store"></i>Food Vendors </a>
+            <a href="./accessCard/accessCardMain.html" class="btn"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="./systemUsers/systemUsers.html" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+
+        <div class="bottom_right">
+            <div class="stats_group">
+                <div class="stats">
+                    <div class="stat left">
+                        <span> Total Vendors</span>
+
+                        <div class="stat_circle">
+                            0
+                        </div>
+                    </div>
+
+                    <div class="stat mid">
+                        <span>Number of Vendors</span>
+
+                        <div class="stat_circle">
+                            8
+                        </div>
+                    </div>
+
+                    <div class="stat right">
+                        <span>Pending Issues</span>
+
+                        <div class="stat_circle">
+                            000
+                        </div>
+                    </div>
+                </div>
+
+                <div class="complain">
+                    <div class="complain_cage">
+                        <div class="complain_title">
+                            User Feedbacks/Complaints
+                        </div>
+
+                        <div class="complain_content">
+                            <div class="complain_card">
+                                Ada Kazhak dalam mangkuk aku wei, Geli betul!
+                                <span class="complain_id">F001 | Anonymous</span>
+                               
+                            </div>
+
+                            <div class="complain_card">
+                                Ada Kazhak dalam mangkuk aku wei, Geli betul!
+                                <span class="complain_id">F001 | Anonymous</span>
+                               
+                            </div>
+
+                            <div class="complain_card">
+                                Ada Kazhak dalam mangkuk aku wei, Geli betul!
+                                <span class="complain_id">F001 | Anonymous</span>
+                               
+                            </div>
+
+                            <div class="complain_card">
+                                Ada Kazhak dalam mangkuk aku wei, Geli betul!
+                                <span class="complain_id">F001 | Anonymous</span>
+                               
+                            </div>
+
+                            <div class="complain_card">
+                                Complain Title Here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="graph_group">
+                <div class="graph red">
+                        <div id="piechart" style="width:90%; height:90%; background-color: rosybrown;"></div>
+                </div>
+
+                <div class="graph">
+                        <div id="barchart_values" style="width: 90%; height: 90%;"></div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../Default/linkFiles/mainJS.js"></script>
+    <script type="text/javascript" src="../Default/linkFiles/headerModal.js"></script>
+    
+        <script>
+            
+            // Load google charts
+            //Pie Chart
+            google.charts.load('current', {'packages':['corechart']});
+            google.charts.setOnLoadCallback(homePieChart);
+
+            
+
+            // Draw the chart and set the chart values
+            function homePieChart() {
+            var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Work', 61],
+            ['Eat', 2],
+            ['TV', 4],
+            ['Gym', 2],
+            ['Sleep', 8]
+            ]);
+            
+            // Optional; add a title and set the width and height of the chart
+            var options = {'title':'Sales',  'fontSize':22 };
+
+                
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+            }
+
+            //Side Bar charts
+            google.charts.load("current", {packages:["corechart"]});
+            google.charts.setOnLoadCallback(homeBarChart);
+            function homeBarChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["Element", "Density", { role: "style" } ],
+                ["Copper", 8.94, "#b87333"],
+                ["Silver", 10.49, "silver"],
+                ["Gold", 19.30, "gold"],
+                ["Platinum", 21.45, "color: #e5e4e2"]
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                            { calc: "stringify",
+                                sourceColumn: 1,
+                                type: "string",
+                                role: "annotation" },
+                            2]);
+
+            var options = {
+                title: "Density of Precious Metals, in g/cm^3",
+                fontSize:20,
+                bar: {groupWidth: "95%"},
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+            chart.draw(view, options);
+
+
+            //Auto resize charts
+            $(window).resize(function(){
+                homePieChart();
+                homeBarChart();
+                });
+            }
+
+            
+        </script>
+</body>
+</html>

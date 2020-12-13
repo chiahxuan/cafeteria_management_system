@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+
+
+html {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+        height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    }
+body {
+    /*DEFAULT SETTINGS DO NOT TOUCH*/
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+    /*Set up background image for body*/
+    background-image: url("../Image/login_desktop.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+    color: white;
+
+    /*Set login_cage hoz and ver center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+    
+    
+}
+
+.login_cage {
+   
+    max-height: 600px;
+    width: 350px;
+    max-width: 350px;
+    background-color: green;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+
+.login_icon_cage {
+    background-color: yellow;
+    
+    height: 300px;
+
+        /*Set login_cage hoz and ver center*/
+        display: flex;
+    justify-content: center;
+    align-items: center;
+   /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+}
+
+
+.login_icon_center {
+    background-color: blue;
+    position: relative;
+    width: 60%;
+
+   border-radius: 50%;
+}
+
+.login_icon_center:before{
+	content: "";
+	display: block;
+	padding-top: 100%; 	/* initial ratio of 1:1*/
+}
+
+
+.login_icon {
+	position:  absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+
+  /*Set up background image for login_icon*/
+  background-image: url("../Image/user.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+    /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+}
+
+.login_input_cage {
+    background-color: red;
+    
+}
+
+.login_input_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    height: 100%;
+    background-color: aqua;
+}
+
+
+input {
+    text-indent: 20px;
+    font-family: FontAwesome, Arial, Helvetica, sans-serif;
+    padding: 10px;
+    width: 80%;
+}
+
+button {
+    padding: 8px;
+    width: 85%;
+}
+
+
+
+input, button {
+    outline: none;
+    margin: 10px;
+    border-radius: 50px;
+    border: none;
+    font-size: 35px;
+    
+}
+
+
+/* For tablets: */
+@media only screen and (max-width:800px) {
+    /*Styles*/
+    body {
+        background-image: url("../Image/city2.jpg");
+        padding: 0;
+        margin: 0;
+        font-size: 8vw;
+        color: white;
+    }
+    /*^^^^^*/
+}
+/*^^^^^^^^^^^^^*/
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen  and (max-width : 500px) {
+    /* Styles */
+    body {
+        background-image: none;
+        background-color: blue;
+        font-size: 10vw;
+
+        padding: 0;
+        margin: 0;
+    }
+    /*^^^^^^^*/
+}
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
+</style>
+</head>
+
+<body>
+   
+    <div class="login_cage">
+        
+        <div class="login_icon_cage">
+            
+            <div class="login_icon_center">
+                
+                <div class="login_icon"></div>
+
+            </div>
+        </div>
+        
+        <div class="login_input_cage">
+             
+            <form action="" class="login_input_form">
+                <input type="text" class="login_input user" placeholder="&#61447; Account ID:">
+                <input type="password"class="login_input pass" placeholder="&#61475;  Password:">
+                <button>Login</button>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+</html>

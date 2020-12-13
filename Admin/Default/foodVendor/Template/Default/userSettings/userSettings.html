@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+        
+<head>
+        <link rel="stylesheet" media="screen" href="style.css" type="text/css" />
+        <link rel="stylesheet" media="handheld" href="mobile.css" type="text/css" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/header.css" type="text/css" />
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/menu.css" type="text/css" />
+<style>
+
+.analysis_bottom {
+    width: 100%;
+    height: 100%;
+
+    background-color: brown; 
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.tabcontent {
+ 
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+    
+    align-items: center;
+    flex-direction: column;
+
+    background-color: teal;
+}
+
+.profile_title_cage {
+
+    width: 80%;
+    height: 40%;
+
+    background-color: orange;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    font-size: 2.4vw;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.profile_name {
+    width: 90%;
+    height: 50%;
+
+    position: absolute;
+
+    top: 10%;
+    
+    z-index: 1;
+
+    background-color: transparent;
+
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.profile_name_data {
+    background-color: #427AA1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_role {
+    width: 90%;
+    height: 50%;
+    background-color: transparent;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile_role_data {
+    background-color:  aqua;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.angle {
+    max-width: 0px;
+    max-height: 0px;
+    
+
+    border-top: 8.4vh solid #427AA1;
+    border-left: 45px solid #427AA1;
+    border-right: 45px solid #427AA1;
+    border-bottom: 8.3vh solid #427AA1;
+    
+}
+
+.dark_angle {
+    border-top-color:  #427AA1;
+    border-left-color: #427AA1;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.light_angle {
+    border-top-color:  aqua;
+    border-left-color: aqua;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+
+.profile_input_cage {
+    width: 80%;
+    height: 40%;
+
+    background-color: crimson;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile_input_stack {
+    display: flex;
+    justify-content: flex-start;
+
+    width: 75%;
+
+    margin-bottom: 20px;
+
+    background-color: chartreuse;
+
+    font-size: 1.8vw;
+    font-family:  'Heebo', Arial, sans-serif;
+}
+
+.profile_input_name {
+    display: flex;
+    justify-content: flex-end;
+
+    background-color: red;
+    min-width: 30%;
+}
+
+.profile_input_data {
+    outline: none;
+    border: none;
+
+    min-width: 60%;
+    margin-left: 5%;
+
+    font-size: 1.6vw;
+    font-family:  'Heebo', Arial, sans-serif;
+   
+}
+
+
+.profile_input_stack button {
+    outline: none;
+    border: none;
+
+    font-size: 1em;
+    height: 100%;
+}
+
+.profile_button {
+    outline: none;
+    border: none;
+
+    padding: 10px 45px;
+    border-radius: 50px;
+
+    background-color: blueviolet;
+
+    font-size: 1.8vw;
+    font-family:  'Heebo', Arial, sans-serif;
+
+    align-self: flex-end;
+
+    margin-right: 10%;
+
+}
+</style>
+<link rel="stylesheet" href="../linkFiles/Modals_CSS/popUpModals.css" type="text/css" />
+</head>
+
+<body>
+    <!--Title Bar-->
+    <div class="top">
+        <div class="top_left">
+            APU Cafeteria System
+            <i class="fas fa-utensils"></i>
+        </div>
+
+        <form class="top_right">
+          <button  type="button" id="notif"><i class="far fa-bell"></i><div class="badge">5</div></button> 
+          <button  type="button"id="user"> <div class="user_cover"> <i class="fas fa-user-circle"></i></div></button> 
+            
+        </form>
+
+        <div class="notif_cage">
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+
+            <div class="notif_stack">
+                <h2>Your weekly report is out</h2>
+                <div>Nov 12 2018 at 00:00 AM</div>
+            </div>
+        </div>
+
+        <div class="notif_setting_cage">
+            <a href="../userSettings/userSettings.html" class="notif_setting_stack">
+                <h2> View Profile</h2>
+            </a>
+
+            <div class="notif_setting_stack">
+                <h2>Log Out</h2>
+            </div>
+        </div>
+    </div>
+    <!--Menu Bar-->
+    <div class="bottom">
+        <div id="bottom_left">
+            <a href="../homeAdmin.html" class="btn"><i class="fas fa-home"></i>Home </a>
+            <a href="../Analysis/analysisMain.html" class="btn"><i class="fas fa-chart-area  "></i>Analysis </a>
+            <a href="../foodVendor/foodVendorMain.html" class="btn" ><i class="fas fa-store"></i>Food Vendors </a>
+            <a href="../accessCard/accessCardMain.html" class="btn"><i class="fas fa-id-card"></i>Access Cards</a>
+            <a href="../systemUsers/systemUsers.html" class="btn"><i class="fas fa-user"></i>System Users</a>
+        </div>
+        <!-- onclick="openCity(event, 'Cafeteria');" id="defaultOpen" -->
+        <div class="bottom_right">
+           <div class="analysis_cage">
+                <div class="analysis_bottom">   
+                    <div class="profile_title_cage">
+                        <div class="profile_name">
+                            <div class="profile_name_data">Elijah Woo</div>
+                            <div class="angle dark_angle"></div>
+                        </div>
+
+                        <div class="profile_role">
+                            <div class="profile_role_data">Admin Manager</div>
+                            <div class="angle light_angle"></div>
+                        </div>
+                    </div>
+
+                    <form class="profile_input_cage">
+                        <div class="profile_input_stack">
+                            <div class="profile_input_name">User ID :</div>
+                            <div class="profile_input_data">A0001</div>
+                        </div>
+
+                        <div class="profile_input_stack">
+                            <div class="profile_input_name">Email :</div>
+                            <input class="profile_input_data" value="emailIsAElECTronicmail@gmail.com">
+                            <button><i class="fas fa-pen"></i></button>
+                        </div>
+
+                        <div class="profile_input_stack">
+                            <div class="profile_input_name">Password :</div>
+                            <input type="password" class="profile_input_data" value="emailIsAElECTronicmail@gmail.com">
+                            <button type="button" id="popUp1"><i class="fas fa-pen"></i></button>
+                        </div>
+                    </form>
+
+                    <button class="profile_button" onclick="window.history.back();">
+                        BACK
+                    </button>
+                </div>
+           </div>
+
+           <!-- The Modal 1-->
+            <div id="Modal1" class="modal">
+                <!-- Modal content -->
+                <div class="content_cage">
+                    <div class="content_outerCage modal_resize_full">
+                        <form class="content_innerCage">
+                            <div class="content_title">Change Password</div>
+
+                            <div class="content_input_stack">
+                                <div class="content_input_title">
+                                    Previous password :
+                                </div>
+
+                                <input type="password" class="content_input">
+                            </div>
+
+                            <div class="content_input_stack">
+                                <div class="content_input_title">
+                                    New password :
+                                </div>
+
+                                <input type="password" class="content_input">
+                            </div>
+
+                            <div class="content_input_stack">
+                                <div class="content_input_title">
+                                    Reconfirm new password :
+                                </div>
+
+                                <input type="password" class="content_input">
+                            </div>
+                            
+                            <div class="button_group">
+                                <button type="button" class="close_style">Confirm</button>
+                                <button type="button" class="close">Cancel</button>
+                            </div>
+                            
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="../linkFiles/mainJS.js"></script>
+    <script type="text/javascript" src="../linkFiles/popUpModal.js"></script>
+</body>
+</html>
